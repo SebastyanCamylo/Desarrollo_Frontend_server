@@ -33,13 +33,13 @@ export default function Menu() {
   };
 
 
-  
+ 
 
   return (
     <div className="container">
       <div className="menu">
         {platos.map((item) => (
-          <div className="row-cols-1 row-cols-md-1 " key={item.id}>
+          <div className="row-cols-1 row-cols-md-1" key={item.id}>
             <div className="col">
               <div className="card h-100 cartas">
                 <img src={item.img} className="card-img-top" alt={item.name} />
@@ -59,7 +59,7 @@ export default function Menu() {
 
                   <div className="buttonMenu">
                     <button
-                      className="btn btn-warning"
+                      className="btn btn-warning btn-lg"
                       onClick={() => {
                         navigate(`/DetalleMenu/${item.id}`);
                       }}
@@ -70,7 +70,7 @@ export default function Menu() {
                       idPlato={item.id}
                     />
                     <button
-                      className="btn btn-success "
+                      className="btn btn-primary btn-lg"
                       onClick={() => handleToggleFavorite(item.id)}
                     >
                       {favorito.find((photo) => photo.id === item.id)?.favorito
@@ -87,4 +87,3 @@ export default function Menu() {
     </div>
   );
 }
-
